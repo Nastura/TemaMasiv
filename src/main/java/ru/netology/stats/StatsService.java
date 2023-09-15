@@ -17,11 +17,11 @@ public class StatsService {
     // среднее = сумма чисел/количество чисел.
     public int AverageSumSales(long[] sales) {
         int AverageSum = 0;
-        for ( long d : sales) {
+        for (long d : sales) {
             AverageSum += d;
         }
 
-        return  AverageSum / sales.length;
+        return AverageSum / sales.length;
 
     }
 
@@ -53,32 +53,33 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-//    // МЕТОД 5. Количество месяцев, в которых продажи были ниже среднего (см. п.2);
-//
-//    public int NumberOfMonthsMinSale(long[] sales) {
-//        int minMonth = 0;
-//
-//        for (int i = 0; i < sales.length; i++) {
-//            if (sales[i] <= sales[minMonth]) {
-//                minMonth = i;
-//            }
-//        }
-//
-//        return minMonth + 1;
-//    }
-//
-//    // МЕТОД 6. Количество месяцев, в выше среднего (см. п.2);
-//
-//    public int NumberOfMonthsMaxSale(long[] sales) {
-//        int maxMonth = 0;
-//
-//        for (int i = 0; i < sales.length; i++) {
-//            if (sales[i] <= sales[maxMonth]) {
-//                maxMonth = i;
-//            }
-//        }
-//
-//        return maxMonth + 1;
-//    }
+    // МЕТОД 5. Количество месяцев, в которых продажи были ниже среднего (см. п.2);
 
+    public int NumberOfMonthsMinSale(long[] sales) {
+        int SredMonth = AverageSumSales(sales);
+        int SummaMes = 0;
+
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < SredMonth)
+                SummaMes++;
+        }
+
+        return SummaMes;
+
+    }
+
+    // МЕТОД 6. Количество месяцев, в которых продажи были выше среднего (см. п.2);
+
+    public int NumberOfMonthsMaxSale(long[] sales) {
+        int SredMonth = AverageSumSales(sales);
+        int maxMonth = 0;
+
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > SredMonth) {
+                maxMonth++;
+            }
+        }
+        return maxMonth;
+    }
 }
+

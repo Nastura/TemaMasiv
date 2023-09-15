@@ -54,26 +54,27 @@ public class StatsServiceTest {
 
     }
 
-//    @Test    //Test 5
-//
-//    public void test5() {
-//
-//        StatsService service = new StatsService();
-//        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-//        int expectedDay = 3;
-//        int actualDay = service.NumberOfMonthsMinSale(sales);
-//        Assertions.assertEquals(expectedDay, actualDay);
-//
-//    }
-//
-//    @Test    //Test 6
-//    public void test6() {
-//
-//        StatsService service = new StatsService();
-//        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-//        int expectedDay = 3;
-//        int actualDay = service.NumberOfMonthsMaxSale(sales);
-//        Assertions.assertEquals(expectedDay, actualDay);
-//
-//    }
+    @Test    //Test 5
+
+    public void test5() {
+
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expectedDay = 5;
+        int actualDay = service.NumberOfMonthsMinSale(sales);
+        Assertions.assertEquals(expectedDay, actualDay);
+
+    }
+
+    @Test    //Test 6
+    public void test6() {
+
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expectedDay = 5;
+        int actualDay = service.NumberOfMonthsMaxSale(sales);
+        Assertions.assertEquals(expectedDay, actualDay);
+
+    }
 }
+
